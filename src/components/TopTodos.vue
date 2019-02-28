@@ -4,7 +4,10 @@
       <br>
       <li class="list-group-item list-group-item-action list-group-item-info " v-for="todo in todos">
         {{todo.body}}
-        <div class="btn-group float-right">
+        <div class="form-check "  @click="check_todo">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        </div>
+        <div class="btn-group float-right clearfix">
           <button type="button" @click="remove(todo)" class="btn btn-danger btn-sm">
             <span class="glyphicon glyphicon-remove-circle"></span> Remove
           </button>
@@ -20,8 +23,10 @@
         this.$store.dispatch('removeTodo', todo)
         this.$store.dispatch('clearTodo')
       },
-      submit: function () {
-        this.$http.post('', this.todos)
+      check_todo: function(event){
+        if(event){
+          alert("Great you did it ! My Congratulations");
+        }
       }
     },
     computed: {
