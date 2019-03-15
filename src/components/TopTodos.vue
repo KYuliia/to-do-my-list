@@ -8,7 +8,7 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
         </div>
         <div class="btn-group float-right clearfix">
-          <button type="button" @click="remove(todo)" class="btn btn-danger btn-sm">
+          <button type="button" @click="remove(todo)" class="btn btn-danger btn-sm  ">
             <span class="glyphicon glyphicon-remove-circle"></span> Remove
           </button>
         </div>
@@ -17,25 +17,30 @@
   </div>
 </template>
 <script>
-  export default{
+  export default {
     methods: {
       remove(todo) {
-        this.$store.dispatch('removeTodo', todo)
-        this.$store.dispatch('clearTodo')
+        this.$store.dispatch('removeTodo', todo),
+          this.$store.dispatch('clearTodo')
       },
-      check_todo: function(event){
-        if(event){
+      check_todo: function (event) {
+        if (event) {
           alert("Great you did it ! My Congratulations");
         }
+
       }
+
     },
     computed: {
-      todos(){
+      todos() {
         return this.$store.getters.todos
       }
     }
+
   }
 </script>
+
 <style>
+
 
 </style>

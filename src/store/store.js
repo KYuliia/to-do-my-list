@@ -5,9 +5,9 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    todos: [],
-    newTodo: ''
-},
+    todos: [
+
+]},
 mutations: {
   GET_TODO(state, todo){
     state.newTodo = todo
@@ -52,3 +52,4 @@ actions: {
   }
 }
 });
+
